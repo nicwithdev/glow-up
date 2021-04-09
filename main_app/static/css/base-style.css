@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Raleway&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -8,9 +10,8 @@
 /* NavBar section */
 
 body {
-  background-color: #faebe4d0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #fcddcf;
+  font-family: "Raleway", sans-serif;
   color: #333333;
 }
 
@@ -20,7 +21,7 @@ nav {
   align-items: center;
   width: 100%;
   height: 8vh;
-  background-color: #e1eadf;
+  background-color: #99a894;
 }
 
 .nav-links {
@@ -36,19 +37,23 @@ nav {
   z-index: 10;
   display: none;
   width: 50%;
-  background-color: #e1eadf;
+  background-color: #99a894;
+}
+
+#logo {
+  font-size: 25px;
+  margin: 0 30px;
+  font-family: "Abril FatFace", sans-serif;
+  letter-spacing: 5px;
+  font-weight: 200;
+  color: rgb(53, 53, 53);
 }
 
 nav a {
   text-decoration: none;
   color: black;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-
-nav .logo {
-  font-size: 25px;
-  margin: 0 30px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
 }
 
 .burger > div {
@@ -82,7 +87,7 @@ nav .logo {
 .nav-active {
   transform: translateX(0%);
   display: inherit;
-  background-color: #e1eadf;
+  background-color: #99a894;
 }
 
 /* HOME PAGE */
@@ -99,6 +104,13 @@ nav .logo {
   margin: 100px 1px;
   text-align: center;
   font-size: 24px;
+}
+
+.action h3 {
+  font-family: "Abril Fatface", sans-serif;
+  letter-spacing: 3px;
+  font-weight: 200;
+  color: #f17e50;
 }
 
 .hair-and-skin {
@@ -396,7 +408,7 @@ nav .logo {
   border: 1px solid black;
   outline: none;
   border-radius: 3px;
-  background-color: #e1eadf;
+  background-color: #99a894;
   margin-top: 5px;
   font-size: 16px;
 }
@@ -474,7 +486,7 @@ nav .logo {
 }
 
 .supp-delete {
-  background-color: #e1eadf;
+  background-color: #99a894;
   padding: 5px;
   outline: none;
   border: 1px solid black;
@@ -509,6 +521,9 @@ nav .logo {
   .action {
     margin: 200px 0px;
     font-size: 30px;
+  }
+  .action h3 {
+    font-size: 40px;
   }
   .detail-contain {
     display: flex;
