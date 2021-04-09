@@ -451,6 +451,10 @@ nav a {
   font-size: 18px;
 }
 
+.form-area {
+  resize: none;
+}
+
 /* supplements section */
 
 .supplements-container {
