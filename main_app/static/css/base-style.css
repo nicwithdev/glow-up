@@ -409,6 +409,7 @@ nav a {
   outline: none;
   border-radius: 3px;
   background-color: #99a894;
+  color: white;
   margin-top: 5px;
   font-size: 16px;
 }
@@ -491,6 +492,7 @@ nav a {
 
 .supp-delete {
   background-color: #99a894;
+  color: white;
   padding: 5px;
   outline: none;
   border: 1px solid black;
