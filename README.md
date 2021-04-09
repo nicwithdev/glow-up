@@ -37,7 +37,7 @@
 <h2>Getting Started</h2>
 
 <p>Click the link below to view my project (hosted on Heroku)</p>
-<a href="#">Glow Up</a>
+<a href="https://glowup-the-app.herokuapp.com/">Glow Up</a>
 <br >
 <h2>Next Steps</h2>
 
