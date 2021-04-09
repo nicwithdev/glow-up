@@ -104,13 +104,6 @@ def skin_detail(request, skin_id):
     return render(request, 'skin_log_detail.html', {'skin': skin})
 
 
-def hairdiary(request):
-    return render(request, 'diary.html')
-
-
-def skindiary(request):
-    return render(request, 'diary.html')
-
 
 # page to add log that displays both HairDiary and Skin Diary buttons
 def add_hair_log(request):
