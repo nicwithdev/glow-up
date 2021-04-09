@@ -478,6 +478,11 @@ nav a {
   font-size: 18px;
 }
 
+#supp-img {
+  width: 100px;
+  height: 100px;
+}
+
 .supplements-info span {
   font-weight: 600;
 }
