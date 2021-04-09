@@ -24,15 +24,18 @@ def home(request):
 
 
 # SUPPLEMENTS FORM STUFF
+@login_required
 def supplements(request):
     pill = Pill.objects.filter(user=request.user)
     return render(request, 'supplements.html', {'pill': pill})
 
 
+@login_required
 def supplements_form(request):
     return render(request, 'add_supplements.html')
 
 
+@login_required
 def submit_form(request):
     Pill.objects.create(
         Name=request.POST['name'],
@@ -42,6 +45,7 @@ def submit_form(request):
     return redirect('/supplements/')
 
 
+@login_required
 def supplements_delete(request, p_id):
     p = Pill.objects.get(id=p_id)
     p.delete()
@@ -50,16 +54,18 @@ def supplements_delete(request, p_id):
 
 # PRODUCTS FORM
 
-
+@login_required
 def products(request):
     products = Products.objects.filter(user=request.user)
     return render(request, 'products.html', {'products': products})
 
 
+@login_required
 def products_add(request):
     return render(request, 'products_form.html')
 
 
+@login_required
 def products_submit(request):
     Products.objects.create(
         Name=request.POST['name'],
@@ -70,14 +76,11 @@ def products_submit(request):
     return redirect('/products/')
 
 
+@login_required
 def products_delete(request, p_id):
     p = Products.objects.get(id=p_id)
     p.delete()
     return redirect('/products/')
-
-
-def plan(request):
-    return render(request, 'about.html')
 
 
 @login_required
@@ -104,12 +107,13 @@ def skin_detail(request, skin_id):
     return render(request, 'skin_log_detail.html', {'skin': skin})
 
 
-
 # page to add log that displays both HairDiary and Skin Diary buttons
+@login_required
 def add_hair_log(request):
     return render(request, 'create_form.html')
 
 
+@login_required
 def add_skin_log(request):
     return render(request, 'create_form.html')
 
@@ -138,6 +142,7 @@ def submit_create_form(request):
 
 
 # hair diary delete
+@login_required
 def delete(request, hair_id):
     h = HairDiary.objects.get(id=hair_id)
     h.delete()
@@ -146,6 +151,7 @@ def delete(request, hair_id):
 # hair diary edit
 
 
+@login_required
 def edit_form(request, hair_id):
     # get the particular hair post i'm editing by id
     h = HairDiary.objects.get(id=hair_id)
@@ -154,6 +160,7 @@ def edit_form(request, hair_id):
 # hair diary submit of update form after user has made edit
 
 
+@login_required
 def submit_update_form(request, h_id):
     this_entry = HairDiary.objects.get(id=h_id)
     this_entry.Log = request.POST['log']
@@ -186,6 +193,7 @@ def submit_update_form(request, h_id):
 
 
 # skin Diary FORM
+@login_required
 def skin_create_form(request):
     return render(request, 'skin_create_form.html')
 
@@ -208,11 +216,13 @@ def submit_skin_form(request):
 
 
 # skin diary update
+@login_required
 def skin_edit_form(request, s_id):
     s = SkinDiary.objects.get(id=s_id)
     return render(request, 'skin_edit_form.html', {'s': s})
 
 
+@login_required
 def skin_submit_update_form(request, s_id):
     this_entry = SkinDiary.objects.get(id=s_id)
     this_entry.Log = request.POST['log']
@@ -228,6 +238,7 @@ def skin_submit_update_form(request, s_id):
 # skin diary delete
 
 
+@login_required
 def skin_delete(request, skin_id):
     s = SkinDiary.objects.get(id=skin_id)
     s.delete()
@@ -251,6 +262,7 @@ def skin_submit_update_form(request, s_id):
 
 # PHOTOS STUFF
 
+@login_required
 def add_hair_photo(request, hair_id):
     photo_file = request.FILES.get('photo-file', None)
     if photo_file:
@@ -268,6 +280,7 @@ def add_hair_photo(request, hair_id):
     return redirect('/log/hair/', hair_id=hair_id)
 
 
+@login_required
 def add_skin_photo(request, skin_id):
     photo_file = request.FILES.get('photo-file', None)
     if photo_file:
