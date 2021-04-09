@@ -27,7 +27,7 @@
 <ul>
   <li>Python</li>
   <li>Django</li>
-  <li>PostgresQL<li>
+  <li>PostgresQL</li>
   <li>AWS S3 storage</li>
   <li>HTML</li>
   <li>CSS</li>
