@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="diary-contain">
+
+  <div class="diary-blurb">
+    <h2>It's time to Glow Up, Gorgeous</h2>
+    <a href='/log/skindiary/create_form/'><button class="add-log">Add Skin Log</button></a>
+  </div>
+
+  <div class="diary-card-contain">
+    {% for s in skin %}
+    {% for photo in s.skin_photo_set.all %}
+    <a href="/log/skin/{{ s.id }}" class="date-link">
+    <div class="diary-cards">   
+    <img src="{{photo.url}}">
+  {% empty %}
+  <a href="/log/skin/{{ s.id }}" class="date-link">
+    <div class="diary-cards">   
+    <img src="https://i.imgur.com/ITM1OiW.jpg">
+  {% endfor %}
+          <p class="date">{{ s.Date }}</p>
+    </div>
+    {% endfor %}
+  </a>
+  </div>
+
+</div>  
+  
+{% endblock %}

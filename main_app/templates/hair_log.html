@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="diary-contain">
+
+  <div class="diary-blurb">
+    <h2>It's time to Glow Up, Gorgeous</h2>
+    <a href='/log/hairdiary/create_form/'><button class="add-log">Add Hair Log</button></a>
+  </div>
+
+  <div class="diary-card-contain">
+      {% for h in hair %}
+      {% for photo in h.hair_photo_set.all %}
+      <a href="/log/hair/{{ h.id }}" class="date-link">
+      <div class="diary-cards">   
+      <img src="{{photo.url}}">
+    {% empty %}
+    <a href="/log/hair/{{ h.id }}" class="date-link">
+      <div class="diary-cards">   
+      <img src="https://i.imgur.com/ITM1OiW.jpg">
+    {% endfor %}
+            <p class="date">{{ h.Date }}</p>
+      </div>
+      {% endfor %}
+    </a>
+    </div>
+
+</div>  
+  
+{% endblock %}

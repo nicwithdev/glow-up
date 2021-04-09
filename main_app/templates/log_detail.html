@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="detail-contain">
+
+  <div class="detail-card">
+    <div class="detail-photos">
+      {% for photo in hair.hair_photo_set.all %}
+        <img src="{{photo.url}}">
+      {% empty %}
+        <div>No Photos Uploaded</div>
+        <form action="/log/hair/{{ hair.id }}/add_hair_photo/" enctype="multipart/form-data" method="POST">
+          {% csrf_token %}
+          <input type="file" name="photo-file">
+          <br />
+          <input type="submit" value="Upload Photo" class="detail-btn">
+        </form>
+      {% endfor %}
+    </div> 
+    
+    
+
+      <div class="detail-info">
+        <div class="detail-text">
+        <p>Date: <span>{{ hair.Date }}</span></p>
+        <p>Water: <span>{{ hair.Water }}</span></p>
+        <p>Product: <span>{{ hair.Product }}</span></p>
+        <p>Morning: <span>{{ hair.Morning }}</span></p>
+        <p>Night: <span>{{ hair.Night }}</span></p>
+        <p>Supplements: <span>{{ hair.Supplements }}</span></p>
+        <p>Log: <span>{{ hair.Log}}</span></p>
+        <br>
+        <a href='/log/{{ hair.id }}/edit'><button class="detail-edit">Edit</button></a>
+        <a href='/log/{{ hair.id }}/delete'><button class="detail-delete">Delete</button></a>
+        </div>
+      </div>
+  </div>
+
+</div>
+
+{% endblock %}

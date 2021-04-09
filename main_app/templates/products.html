@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="supplements-container">
+    <div class="supplements-title">
+    <a href='/products/add/form/'><button class="supp-btn">Add Products</button></a>
+</div>        
+
+<div class="supp-flex">
+    {% for p in products %}
+<div class="supplements-info">
+        <p>Name: <span>{{ p.Name }}</span></p>
+        <p>Brand: <span>{{ p.Brand }}</span></p>
+        <p>Price: <span>${{ p.Price }}</span></p>
+        <a href='/products/{{ p.id }}/delete/'><button class="supp-delete">Delete</button></a>
+    </div>
+{% endfor %}
+</div>
+</div>
+{% endblock %}

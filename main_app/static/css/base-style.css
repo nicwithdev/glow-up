@@ -1,0 +1,536 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* NavBar section */
+
+body {
+  background-color: #faebe4d0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #333333;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 8vh;
+  background-color: #e1eadf;
+}
+
+.nav-links {
+  position: absolute;
+  right: 0;
+  height: 94vh;
+  top: 8vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in;
+  z-index: 10;
+  display: none;
+  width: 50%;
+  background-color: #e1eadf;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+nav .logo {
+  font-size: 25px;
+  margin: 0 30px;
+}
+
+.burger > div {
+  width: 25px;
+  height: 3px;
+  background-color: rgb(53, 53, 53);
+  margin: 5px;
+  transition: 0.2s ease;
+}
+
+.burger {
+  margin: 0 50px;
+}
+
+.burger:hover {
+  cursor: pointer;
+}
+
+.exit .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.exit .line2 {
+  opacity: 0;
+}
+
+.exit .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.nav-active {
+  transform: translateX(0%);
+  display: inherit;
+  background-color: #e1eadf;
+}
+
+/* HOME PAGE */
+
+.info {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.action {
+  margin: 100px 1px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.hair-and-skin {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 40px 10px;
+  align-items: center;
+}
+
+.achieve {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 40px 10px;
+  align-items: center;
+}
+
+.routine {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 40px 10px;
+  align-items: center;
+}
+
+.info img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10%;
+  object-fit: cover;
+}
+
+.info-text {
+  padding: 30px;
+  width: 70%;
+}
+
+.info h4 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 26px;
+}
+
+.info h6 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  width: 100%;
+  position: relative;
+  height: 40vh;
+}
+
+.mySlides img {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40vh;
+  width: 100%;
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* SIGN UP AND LOGIN IN PAGES */
+
+#auth-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.log-contain {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 60vh;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: #5e605d;
+  border-radius: 5px;
+}
+
+.log-box {
+  margin: 30px 20px;
+  text-align: center;
+  border-bottom: 1px solid white;
+}
+
+.log-box h2 {
+  margin: 20px 0px;
+}
+
+.log-form {
+  text-align: center;
+}
+
+.sub-field {
+  background-color: #e59573;
+  color: white;
+  margin: 30px 5px;
+  padding: 7px;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 5%;
+  font-weight: bold;
+}
+
+.sub-field:hover {
+  cursor: pointer;
+}
+
+/* LOG PAGES */
+
+.diary-contain {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.diary-blurb {
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+
+.diary-blurb h2 {
+  border-bottom: 1px solid black;
+}
+
+.add-log {
+  margin: 20px 0px;
+  font-size: 18px;
+  padding: 5px;
+  background-color: #e59573;
+  color: white;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.add-log:hover {
+  cursor: pointer;
+}
+
+.diary-cards {
+  height: 300px;
+  width: 250px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: rgb(255, 245, 245);
+  margin: 50px 0px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.diary-cards img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.date {
+  margin: 15px 0px;
+}
+
+.date-link {
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+}
+
+/* DETAIL PAGES */
+
+.detail-contain {
+  width: 100%;
+  height: 100%;
+}
+
+.detail-card {
+  width: 100%;
+  height: 100%;
+}
+
+.detail-photos {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-photos img {
+  height: 200px;
+  width: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.detail-info {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0px;
+}
+
+.detail-info p {
+  margin: 7px 0px;
+  font-size: 18px;
+}
+
+.detail-info span {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.detail-btn {
+  padding: 3px;
+  background-color: #e59573;
+  border: 1px solid black;
+  color: white;
+  outline: none;
+  border-radius: 2px;
+}
+
+.detail-edit {
+  padding: 5px;
+  border: 1px solid black;
+  outline: none;
+  border-radius: 3px;
+  background-color: #e59573;
+  color: white;
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+.detail-delete {
+  padding: 5px;
+  border: 1px solid black;
+  outline: none;
+  border-radius: 3px;
+  background-color: #e1eadf;
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+/* CREATE AND UPDATE FORMS */
+
+.create-contain {
+  width: 100%;
+  height: 94vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-btn {
+  padding: 5px;
+  outline: none;
+  border: 1px solid black;
+  background-color: #e59573;
+  font-size: 16px;
+  color: white;
+  margin: 10px 0px;
+}
+
+.create-contain label {
+  font-size: 18px;
+}
+
+.create-contain input {
+  font-size: 16px;
+  padding: 2px;
+}
+
+.create-contain select {
+  padding: 5px;
+}
+
+.create-contain p {
+  font-size: 18px;
+}
+
+/* supplements section */
+
+.supplements-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.supplements-title {
+  margin: 100px 0px;
+}
+
+.supplements-info {
+  text-align: center;
+  padding: 50px;
+  font-size: 18px;
+}
+
+.supplements-info span {
+  font-weight: 600;
+}
+
+.supp-btn {
+  padding: 5px;
+  outline: none;
+  border: 1px solid black;
+  background-color: #e59573;
+  font-size: 16px;
+  color: white;
+}
+
+.supp-delete {
+  background-color: #e1eadf;
+  padding: 5px;
+  outline: none;
+  border: 1px solid black;
+  font-size: 16px;
+  margin: 5px 0px;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 950px) {
+  .info {
+    align-items: center;
+  }
+  .hair-and-skin,
+  .routine,
+  .achieve {
+    justify-content: space-between;
+    width: 70%;
+    flex-wrap: nowrap;
+    text-align: left;
+  }
+
+  .diary-card-contain {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .diary-cards {
+    margin: 50px;
+  }
+  .action {
+    margin: 200px 0px;
+    font-size: 30px;
+  }
+  .detail-contain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .detail-card {
+    width: 70%;
+  }
+  .detail-photos {
+    height: 500px;
+  }
+  .detail-photos img {
+    height: 400px;
+    width: 400px;
+  }
+  .supp-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .supplements-info {
+    margin: 20px 50px;
+  }
+}

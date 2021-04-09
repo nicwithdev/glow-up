@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div id="auth-container">
+
+  <div class="log-contain">
+
+    <div class="log-box">
+      <h2>Log In</h2>
+    </div>
+
+  <div class="log-form">
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+      <input type="submit" class="sub-field" value="Get Glowin'">
+      <input type="hidden" name="next" value="{{ next }}">
+    </form>
+  </div>
+
+  </div>
+</div>
+  
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="detail-contain">
+
+  <div class="detail-card">
+    <div class="detail-photos">
+      {% for photo in skin.skin_photo_set.all %}
+        <img src="{{photo.url}}">
+      {% empty %}
+        <div>No Photos Uploaded</div>
+        <form action="/log/skin/{{ skin.id }}/add_skin_photo/" enctype="multipart/form-data" method="POST">
+          {% csrf_token %}
+          <input type="file" name="photo-file">
+          <br />
+          <input type="submit" value="Upload Photo" class="detail-btn">
+        </form>
+      {% endfor %}
+    </div> 
+    
+    
+
+      <div class="detail-info">
+        <div class="detail-text">
+        <p>Date: <span>{{ s.Date }}</span></p>
+        <p>Water: <span>{{ s.Water }}</span></p>
+        <p>Product: <span>{{ s.Product }}</span></p>
+        <p>Morning: <span>{{ s.Morning }}</span></p>
+        <p>Night: <span>{{ s.Night }}</span></p>
+        <p>Supplements: <span>{{ s.Supplements }}</span></p>
+        <p>Log: <span>{{ s.Log}}</span></p>
+        <br>
+        <a href='/log/skindiary/{{ skin.id }}/edit'><button class="detail-edit">Edit</button></a>
+        <a href='/log/skindiary/{{ skin.id }}/delete'><button class="detail-delete">Delete</button></a>
+        </div>
+      </div>
+  </div>
+
+</div>
+
+{% endblock %}
